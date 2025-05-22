@@ -19,7 +19,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*/
-import { Common } from "@k8slens/extensions";
+import { Common } from "@freelensapp/extensions";
 import { observable, makeObservable, toJS } from "mobx";
 
 export type DebugPodPreferencesModel = {
@@ -48,7 +48,7 @@ export class DebugPodPreferencesStore extends Common.Store.ExtensionStore<DebugP
     makeObservable(this);
   }
 
-  protected fromStore( data: DebugPodPreferencesModel): void {
+  fromStore( data: DebugPodPreferencesModel): void {
     this.debugImage = data.debugImage;
     this.ephemeralContainersEnabled = data.ephemeralContainersEnabled;
     this.debugImageList = data.debugImageList;

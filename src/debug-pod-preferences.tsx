@@ -19,7 +19,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*/
-import { Common, Renderer } from "@k8slens/extensions";
+import { Common, Renderer } from "@freelensapp/extensions";
 import React from "react";
 import { observer } from "mobx-react";
 import { DebugPodPreferencesStore } from "./debug-pod-preferences-store";
@@ -36,7 +36,8 @@ export class DebugPodToolsPreferenceInput extends React.Component {
   render() {
     const debug = DebugPodPreferencesStore.getInstance();
 
-    return (
+    // @ts-ignore
+      return (
       <>
         <h5>Debug Image</h5>
         <div className="flex gaps">
@@ -44,7 +45,7 @@ export class DebugPodToolsPreferenceInput extends React.Component {
             themeName="light"
             options={debug.debugImageList}
             value={debug.debugImage}
-            onChange={({ value }) => {debug.debugImage = value;}}
+            onChange={({ value }:any) => {debug.debugImage = value;}}
           />
           <Component.Button
             primary
